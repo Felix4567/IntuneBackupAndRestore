@@ -45,7 +45,7 @@ function Start-IntuneBackup() {
 		if ($scopes -notcontains "DeviceManagementScripts.ReadWrite.All") {$IncorrectScopes = $true}
         if ($IncorrectScopes) {
             Write-Host "Incorrect scopes, please sign in again"
-            connect-mggraph -scopes "DeviceManagementApps.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All, DeviceManagementServiceConfig.ReadWrite.All, DeviceManagementManagedDevices.ReadWrite.All"
+            connect-mggraph -scopes "DeviceManagementApps.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All, DeviceManagementServiceConfig.ReadWrite.All, DeviceManagementManagedDevices.ReadWrite.All, DeviceManagementScripts.ReadWrite.All"
         }else{
             Write-Host "MS-Graph scopes are correct"
         }
